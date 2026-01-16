@@ -6,6 +6,7 @@
     <title>Digital Guide | Next-Gen Portal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Hind+Siliguri:wght@400;600;700&display=swap');
         
@@ -40,6 +41,18 @@
             #main-title { font-size: 3.2rem; line-height: 1.1; }
             .hero-mt { margin-top: 100px; } /* Pushing Hero down for mobile */
         }
+        /* Styling optimization */
+      #pro-scroll-section {
+          background-image: radial-gradient(circle at 1.5px 1.5px, rgba(255,255,255,0.03) 1.5px, transparent 0);
+          background-size: 30px 30px;
+      }
+  
+      /* Mobile specific width to make cards look centered */
+      @media (max-width: 768px) {
+          .pro-panel {
+              min-width: 85vw; /* মোবাইলে কার্ডের উইডথ ৮৫% যাতে পরের কার্ডের একটু অংশ দেখা যায় */
+          }
+      }
     </style>
 </head>
 <body>
@@ -221,39 +234,106 @@
       </div>
   </section>
   
-  <script>
-      window.addEventListener('load', () => {
-          // Scroll Reveal Animation for each element
-          gsap.utils.toArray(".reveal").forEach((elem) => {
-              gsap.fromTo(elem, 
-                  { opacity: 0, y: 50, scale: 0.95 }, 
-                  {
-                      opacity: 1, 
-                      y: 0, 
-                      scale: 1,
-                      duration: 1, 
-                      ease: "power4.out",
-                      scrollTrigger: {
-                          trigger: elem,
-                          start: "top 85%",
-                          toggleActions: "play none none none"
-                      }
-                  }
-              );
-          });
+ 
+  <section id="pro-scroll-section" class="relative py-24 bg-[#050505] overflow-hidden min-h-screen flex flex-col justify-between">
+    
+      <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none"></div>
   
-          // Problem cards hover effect logic via GSAP
-          document.querySelectorAll('.group').forEach(card => {
-              card.addEventListener('mouseenter', () => {
-                  gsap.to(card, { y: -10, backgroundColor: "rgba(255,255,255,0.08)", duration: 0.3 });
-              });
-              card.addEventListener('mouseleave', () => {
-                  gsap.to(card, { y: 0, backgroundColor: "rgba(255,255,255,0.05)", duration: 0.3 });
-              });
-          });
-      });
-  </script>
+      <div class="container mx-auto px-6 relative z-20 text-center mb-12">
+          <div class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-[0.3em] text-green-500 uppercase bg-green-500/10 rounded-full">
+              Platform Benefits
+          </div>
+          <h2 class="text-white text-4xl md:text-7xl font-black leading-tight">
+              আপনার নাগরিক সেবা <br/> <span class="text-green-500 italic">এখন হবে ঝামেলাহীন</span>
+          </h2>
+      </div>
+  
+      <div id="pro-pin-wrapper" class="relative w-full flex items-center overflow-hidden h-[500px] md:h-[550px]">
+          <div id="pro-move-track" class="flex flex-row items-center gap-6 md:gap-8 px-6 md:px-[12vw]">
+              
+              <div class="pro-panel min-w-[85vw] md:min-w-[400px] flex-shrink-0">
+                  <div class="p-8 md:p-10 rounded-[2.5rem] md:rounded-[3rem] bg-white/[0.03] border border-white/10 backdrop-blur-xl h-[450px] md:h-[480px] flex flex-col justify-between group">
+                      <div class="text-5xl group-hover:scale-110 transition-transform">🎯</div>
+                      <div>
+                          <h3 class="text-2xl font-bold text-white mb-4">নির্ভুল ডাটাবেজ</h3>
+                          <p class="text-gray-400 text-sm leading-relaxed">২০২৬ সালের সর্বশেষ সরকারি গেজেট ও নীতিমালা অনুযায়ী প্রতিটি তথ্যের নির্ভুলতা নিশ্চিত করা হয়েছে।</p>
+                      </div>
+                      <span class="text-[10px] font-mono text-gray-600 tracking-widest uppercase italic">Efficiency 01</span>
+                  </div>
+              </div>
+  
+              <div class="pro-panel min-w-[85vw] md:min-w-[400px] flex-shrink-0">
+                  <div class="p-8 md:p-10 rounded-[2.5rem] md:rounded-[3rem] bg-white/[0.03] border border-white/10 backdrop-blur-xl h-[450px] md:h-[480px] flex flex-col justify-between group">
+                      <div class="text-5xl group-hover:scale-110 transition-transform">🗣️</div>
+                      <div>
+                          <h3 class="text-2xl font-bold text-white mb-4">সহজ বাংলা গাইড</h3>
+                          <p class="text-gray-400 text-sm leading-relaxed">জটিল দাপ্তরিক ভাষা বাদ দিয়ে একদম তৃণমূলের মানুষের বোঝার উপযোগী করে সহজ বাংলা ব্যবহার করা হয়েছে।</p>
+                      </div>
+                      <span class="text-[10px] font-mono text-gray-600 tracking-widest uppercase italic">Experience 02</span>
+                  </div>
+              </div>
+  
+              <div class="pro-panel min-w-[85vw] md:min-w-[400px] flex-shrink-0">
+                  <div class="p-8 md:p-10 rounded-[2.5rem] md:rounded-[3rem] bg-white/[0.03] border border-white/10 backdrop-blur-xl h-[450px] md:h-[480px] flex flex-col justify-between group">
+                      <div class="text-5xl group-hover:scale-110 transition-transform">📄</div>
+                      <div>
+                          <h3 class="text-2xl font-bold text-white mb-4">স্মার্ট চেকলিস্ট</h3>
+                          <p class="text-gray-400 text-sm leading-relaxed">অফিসে যাওয়ার আগে আপনার কি কি কাগজ লাগবে, তার একটি অটো-জেনারেটেড লিস্ট ডাউনলোড করুন।</p>
+                      </div>
+                      <span class="text-[10px] font-mono text-gray-600 tracking-widest uppercase italic">Tool 03</span>
+                  </div>
+              </div>
+  
+              <div class="pro-panel min-w-[85vw] md:min-w-[400px] flex-shrink-0">
+                  <div class="p-8 md:p-10 rounded-[2.5rem] md:rounded-[3rem] bg-white/[0.03] border border-white/10 backdrop-blur-xl h-[450px] md:h-[480px] flex flex-col justify-between group">
+                      <div class="text-5xl group-hover:scale-110 transition-transform">🎬</div>
+                      <div>
+                          <h3 class="text-2xl font-bold text-white mb-4">ভিডিও টিউটোরিয়াল</h3>
+                          <p class="text-gray-400 text-sm leading-relaxed">অনলাইন ফর্ম পূরণের প্রতিটি ধাপ আমরা স্ক্রিন-রেকর্ড ভিডিওর মাধ্যমে হাতে কলমে দেখিয়ে দিই।</p>
+                      </div>
+                      <span class="text-[10px] font-mono text-gray-600 tracking-widest uppercase italic">Visual 04</span>
+                  </div>
+              </div>
+  
+              <div class="pro-panel min-w-[85vw] md:min-w-[500px] flex-shrink-0">
+                  <div class="p-10 md:p-12 rounded-[2.5rem] md:rounded-[4rem] bg-green-500 text-black h-[450px] md:h-[480px] flex flex-col justify-center items-center text-center group">
+                      <div class="text-6xl mb-6 group-hover:bounce">🚀</div>
+                      <h3 class="text-4xl md:text-5xl font-black mb-6 italic tracking-tighter leading-none">এখনই শুরু <br/> করুন</h3>
+                      <button class="px-10 py-4 bg-black text-white font-black rounded-2xl hover:scale-105 transition-all">ক্যাটাগরি দেখুন</button>
+                  </div>
+              </div>
+  
+          </div>
+      </div>
+  
+      <div class="container mx-auto px-6 relative z-20 mt-12">
+          <div class="flex flex-col md:flex-row justify-between items-center py-10 border-t border-white/10 gap-8 text-center md:text-left">
+              <div class="flex gap-8 md:gap-12">
+                  <div>
+                      <p class="text-green-500 text-2xl font-black">১০০%</p>
+                      <p class="text-gray-500 text-[10px] uppercase font-bold">সঠিক তথ্য</p>
+                  </div>
+                  <div>
+                      <p class="text-green-500 text-2xl font-black">২৪/৭</p>
+                      <p class="text-gray-500 text-[10px] uppercase font-bold">ফ্রি এক্সেস</p>
+                  </div>
+                  <div>
+                      <p class="text-green-500 text-2xl font-black">২০২৬</p>
+                      <p class="text-gray-500 text-[10px] uppercase font-bold">আপডেটেড</p>
+                  </div>
+              </div>
+              <p class="text-gray-500 text-xs italic max-w-xs md:text-right">
+                  "সহজ বাংলা গাইডলাইন নিয়ে আমরা আছি আপনার পাশে।"
+              </p>
+          </div>
+      </div>
+  
+  </section>
+  
+  
 
+  
+  
     
 
     <script>
@@ -303,6 +383,61 @@
                 isMenuOpen = !isMenuOpen;
             });
         });
+        // problem solution
+        
+        
+        window.addEventListener('load', () => {
+          // Scroll Reveal Animation for each element
+          gsap.utils.toArray(".reveal").forEach((elem) => {
+              gsap.fromTo(elem, 
+                  { opacity: 0, y: 50, scale: 0.95 }, 
+                  {
+                      opacity: 1, 
+                      y: 0, 
+                      scale: 1,
+                      duration: 1, 
+                      ease: "power4.out",
+                      scrollTrigger: {
+                          trigger: elem,
+                          start: "top 85%",
+                          toggleActions: "play none none none"
+                      }
+                  }
+              );
+          });
+  
+          // Problem cards hover effect logic via GSAP
+          document.querySelectorAll('.group').forEach(card => {
+              card.addEventListener('mouseenter', () => {
+                  gsap.to(card, { y: -10, backgroundColor: "rgba(255,255,255,0.08)", duration: 0.3 });
+              });
+              card.addEventListener('mouseleave', () => {
+                  gsap.to(card, { y: 0, backgroundColor: "rgba(255,255,255,0.05)", duration: 0.3 });
+              });
+          });
+      });
+      // horigontal scroll
+
+      gsap.registerPlugin(ScrollTrigger);
+  
+  window.addEventListener('load', () => {
+      const proTrack = document.querySelector("#pro-move-track");
+      const proPanels = gsap.utils.toArray(".pro-panel");
+
+      // Horizontal Scroll for BOTH Mobile and Desktop
+      gsap.to(proPanels, {
+          x: () => -(proTrack.scrollWidth - window.innerWidth),
+          ease: "none",
+          scrollTrigger: {
+              trigger: "#pro-scroll-section",
+              pin: true,
+              scrub: 1,
+              start: "top top",
+              end: () => "+=" + proTrack.scrollWidth,
+              invalidateOnRefresh: true,
+          }
+      });
+  });
     </script>
 </body>
 </html>
