@@ -129,26 +129,6 @@
           .reveal-v6-ultra h2 { font-size: 3.2rem; }
           .reveal-v6-ultra { margin-bottom: 3rem; }
       }
-
-      /* footer*/
-
-      @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-      
-      .z-item {
-          transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-          opacity: 1 !important; /* Force content display */
-      }
-      .z-item:hover {
-          transform: translateY(-12px) scale(1.01);
-      }
-  
-      @media (max-width: 768px) {
-          .zenith-header h2 { font-size: 2.2rem !important; }
-          .z-item { padding: 2rem !important; border-radius: 2.5rem !important; }
-          .zenith-cta { padding: 4rem 1.5rem !important; border-radius: 3rem !important; }
-          .zenith-cta h2 { font-size: 2.2rem !important; }
-          footer .md\:col-span-6 h4 { font-size: 2.2rem; }
-      }
     </style>
 </head>
 <body>
@@ -918,114 +898,7 @@
   
  
   
-  <section id="zenith-ecosystem" class="relative py-20 md:py-32 bg-[#010101] overflow-visible">
-    
-      <div class="absolute inset-0 pointer-events-none">
-          <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-emerald-500/5 blur-[160px] rounded-full"></div>
-      </div>
   
-      <div class="container mx-auto px-6 relative z-10">
-          
-          <div class="max-w-4xl mx-auto text-center mb-24 zenith-header opacity-0 translate-y-10">
-              <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[9px] font-black tracking-[0.4em] text-emerald-400 uppercase mb-8">
-                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                  Trust Architecture 2027
-              </div>
-              <h2 class="text-4xl md:text-8xl font-black text-white leading-tight tracking-tighter mb-8">
-                  কেন আমাদের ওপর <br/> 
-                  <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-500 to-teal-400 italic">ভরসা করবেন?</span>
-              </h2>
-          </div>
-  
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 mb-40 zenith-grid">
-              
-              <div class="z-item md:col-span-8 group relative p-[1px] rounded-[3rem] bg-white/5 overflow-hidden transition-all duration-700">
-                  <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[conic-gradient(from_0deg,#10b981,transparent,#10b981)] animate-[spin_5s_linear_infinite]"></div>
-                  <div class="relative h-full bg-[#080808]/95 backdrop-blur-3xl p-8 md:p-14 rounded-[2.95rem] flex flex-col md:flex-row items-center gap-10">
-                      <div class="flex-1">
-                          <h3 class="text-2xl md:text-4xl font-black text-white mb-6 italic">১০০% নির্ভুল বাংলা গাইড</h3>
-                          <p class="text-gray-400 text-sm md:text-lg leading-relaxed font-light">জটিল দাপ্তরিক কাজগুলোকে আমরা আপনার জন্য সহজ ভাষায় রূপান্তর করেছি। আমাদের লক্ষ্য আপনাকে স্বনির্ভর করা।</p>
-                      </div>
-                      <div class="text-7xl opacity-30 group-hover:opacity-100 transition-all duration-700">🇧🇩</div>
-                  </div>
-              </div>
-  
-              <div class="z-item md:col-span-4 p-10 rounded-[3rem] bg-gradient-to-br from-emerald-600 to-teal-900 flex flex-col justify-between group relative overflow-hidden">
-                  <div class="absolute -right-6 -bottom-6 text-[10rem] text-white/5 font-black">27</div>
-                  <div class="text-4xl mb-10 group-hover:scale-110 transition-transform">🔄</div>
-                  <div>
-                      <h4 class="text-xl font-black text-white uppercase italic mb-2 tracking-tighter">নিয়মিত আপডেট</h4>
-                      <p class="text-white/70 text-xs font-bold leading-relaxed">২০২৭ সালের সরকারি গেজেট অনুযায়ী তথ্য ভেরিফাইড।</p>
-                  </div>
-              </div>
-  
-              <div class="z-item md:col-span-5 p-10 rounded-[3rem] bg-[#0a0a0a] border border-white/5 flex flex-col justify-between group">
-                  <div class="w-14 h-14 bg-red-500/10 rounded-2xl flex items-center justify-center text-3xl mb-10 group-hover:bg-red-500 group-hover:text-black transition-all">❌</div>
-                  <div>
-                      <h4 class="text-2xl font-bold text-white mb-3 italic">দালাল-মুক্ত তথ্য</h4>
-                      <p class="text-gray-500 text-sm italic leading-relaxed">সরাসরি তথ্য প্রদানের মাধ্যমে আমরা মধ্যস্বত্বভোগীদের দৌরাত্ম্য বন্ধ করি।</p>
-                  </div>
-              </div>
-  
-              <div class="z-item md:col-span-7 p-10 rounded-[3rem] bg-white/[0.02] border border-white/10 backdrop-blur-3xl flex flex-col md:flex-row justify-between items-center gap-8">
-                  <div class="flex-1">
-                      <h4 class="text-2xl font-black text-white italic mb-3">হাজারো ব্যবহারকারীর আস্থা</h4>
-                      <p class="text-gray-500 text-xs italic leading-relaxed">প্রতিদিন হাজার হাজার নাগরিক আমাদের প্ল্যাটফর্ম ব্যবহার করে সফল হচ্ছেন।</p>
-                  </div>
-                  <div class="flex -space-x-3">
-                      <div class="w-12 h-12 rounded-full bg-emerald-500 border-2 border-black flex items-center justify-center text-[8px] font-black">A+</div>
-                      <div class="w-12 h-12 rounded-full bg-emerald-700 border-2 border-black"></div>
-                      <div class="w-12 h-12 rounded-full bg-teal-900 border-2 border-black"></div>
-                  </div>
-              </div>
-          </div>
-  
-          <div class="relative py-20 md:py-32 px-8 rounded-[4rem] bg-gradient-to-br from-emerald-500 to-emerald-800 text-center overflow-hidden zenith-cta opacity-0 scale-95">
-              <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
-              <div class="relative z-10 max-w-4xl mx-auto">
-                  <h2 class="text-4xl md:text-7xl font-black text-white leading-none tracking-tighter mb-12 uppercase italic">ডিজিটাল নাগরিক সেবা <br/> শুরু হোক আজই</h2>
-                  <div class="flex flex-col md:flex-row justify-center gap-6">
-                      <button class="px-12 py-5 bg-black text-white font-black rounded-2xl hover:bg-white hover:text-black transition-all transform hover:scale-110">👉 গাইড দেখুন</button>
-                      <button class="px-12 py-5 bg-white/20 backdrop-blur-md border border-white/30 text-white font-black rounded-2xl hover:bg-white hover:text-black transition-all transform hover:scale-110">👉 সমাধান খুঁজুন</button>
-                  </div>
-              </div>
-          </div>
-  
-          <footer class="mt-40 pt-20 border-t border-white/5">
-              <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
-                  <div class="md:col-span-6">
-                      <h4 class="text-4xl font-black text-white mb-8 tracking-tighter uppercase italic">নাগরিক <span class="text-emerald-500">সেবা</span></h4>
-                      <p class="text-gray-500 text-base md:text-lg font-light italic leading-relaxed max-w-sm border-l-2 border-emerald-500/30 pl-8">
-                          আমরা তথ্যের মাধ্যমে আপনাকে শক্তিশালী করি। আপনার ডিজিটাল যাত্রাকে সহজ করাই আমাদের লক্ষ্য।
-                      </p>
-                  </div>
-                  <div class="md:col-span-3">
-                      <h6 class="text-emerald-500 font-black uppercase tracking-[0.4em] text-[9px] mb-10">Quick Access</h6>
-                      <ul class="space-y-6 text-gray-500 font-bold text-xs uppercase tracking-widest">
-                          <li><a href="#" class="hover:text-white transition-all flex items-center gap-3 group"><span class="w-0 group-hover:w-4 h-[1px] bg-emerald-500 transition-all"></span> NID গাইডলাইন</a></li>
-                          <li><a href="#" class="hover:text-white transition-all flex items-center gap-3 group"><span class="w-0 group-hover:w-4 h-[1px] bg-emerald-500 transition-all"></span> পাসপোর্ট সলিউশন</a></li>
-                      </ul>
-                  </div>
-                  <div class="md:col-span-3">
-                      <h6 class="text-emerald-500 font-black uppercase tracking-[0.4em] text-[9px] mb-10">Support Portal</h6>
-                      <a href="mailto:help@nagorik.com" class="text-white font-black text-lg md:text-xl hover:text-emerald-500 transition-all underline decoration-emerald-500/30 underline-offset-8">help@nagorik.com</a>
-                  </div>
-              </div>
-  
-              <div class="flex flex-col md:flex-row justify-between items-center py-10 border-t border-white/5 gap-6 text-[9px] font-black text-gray-600 uppercase tracking-[0.5em]">
-                  <p>© ২০২৬ নাগরিক সেবা। MD.SAIDUZZAMAN SAAD।</p>
-                  <div class="flex gap-10">
-                      <a href="#" class="hover:text-white transition-colors">Privacy</a>
-                      <a href="#" class="hover:text-white transition-colors">Terms</a>
-                  </div>
-              </div>
-          </footer>
-      </div>
-  </section>
-  
-
-  
- 
   
   
     
@@ -1267,35 +1140,6 @@
           gsap.to(".side-reveal-right", {
               scrollTrigger: { trigger: "#office-v6-ultra", start: "top 75%" },
               opacity: 1, x: 0, duration: 1.2, ease: "power4.out"
-          });
-      });
-
-      // footer
-
-      window.addEventListener('load', () => {
-          gsap.registerPlugin(ScrollTrigger);
-  
-          // Zenith Header Entrance
-          gsap.to(".zenith-header", {
-              scrollTrigger: { trigger: "#zenith-ecosystem", start: "top 85%" },
-              opacity: 1, y: 0, duration: 1.5, ease: "expo.out"
-          });
-  
-          // Bento Grid Stagger (Fixing Visibility)
-          gsap.from(".z-item", {
-              scrollTrigger: { trigger: ".zenith-grid", start: "top 80%" },
-              opacity: 0, scale: 0.95, y: 40, duration: 1.2, stagger: 0.2, ease: "power4.out"
-          });
-  
-          // CTA Panel Zoom In
-          gsap.to(".zenith-cta", {
-              scrollTrigger: { trigger: ".zenith-cta", start: "top 85%" },
-              opacity: 1, scale: 1, y: 0, duration: 1.5, ease: "expo.out"
-          });
-  
-          // Avatars Floating
-          gsap.to(".flex.-space-x-3 div", {
-              y: -10, repeat: -1, yoyo: true, duration: 2.5, stagger: 0.3, ease: "sine.inOut"
           });
       });
     </script>
