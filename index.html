@@ -77,6 +77,25 @@
               min-height: 420px;
           }
       }
+
+      /* step style*/
+      @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      
+      .num-box {
+          transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      
+      .fan-item:hover .num-box {
+          transform: scale(1.15) rotate(10deg);
+          background: rgba(255,255,255,0.08);
+          border-color: rgba(34, 197, 94, 0.5);
+      }
+  
+      @media (max-width: 768px) {
+          .fan-item { gap: 1.5rem !important; }
+          .num-box { width: 4.5rem !important; height: 4.5rem !important; font-size: 1.5rem !important; }
+          .group .opacity-0 { opacity: 0.5 !important; } /* Mobile Border Always Active */
+      }
     </style>
 </head>
 <body>
@@ -478,6 +497,105 @@
 
   
  
+  <section id="story-steps" class="relative py-28 bg-[#020202] overflow-hidden">
+    
+      <div class="absolute inset-0 opacity-20 pointer-events-none">
+          <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-green-500/10 blur-[120px] rounded-full"></div>
+          <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/10 blur-[120px] rounded-full"></div>
+      </div>
+  
+      <div class="container mx-auto px-6 relative z-10">
+          <div class="max-w-4xl mx-auto text-center mb-24">
+              <h2 class="text-5xl md:text-8xl font-black text-white leading-tight tracking-tighter mb-8 reveal-fan">
+                  সহজ <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600 italic">৫টি ধাপে</span> গাইড
+              </h2>
+              <div class="h-1 w-24 bg-green-500 mx-auto rounded-full reveal-fan"></div>
+          </div>
+  
+          <div class="hidden md:block absolute left-1/2 top-96 bottom-40 w-[1px] bg-gradient-to-b from-green-500/50 via-white/10 to-transparent -translate-x-1/2"></div>
+  
+          <div class="max-w-5xl mx-auto space-y-20 md:space-y-32">
+              
+              <div class="fan-item relative flex flex-col md:flex-row items-center gap-10 opacity-0 translate-y-20">
+                  <div class="md:w-1/2 flex justify-center md:justify-end">
+                      <div class="num-box w-20 h-20 md:w-24 md:h-24 rounded-[2rem] bg-white/5 border border-white/10 flex items-center justify-center text-3xl font-black text-green-500 shadow-2xl backdrop-blur-3xl">01</div>
+                  </div>
+                  <div class="md:w-1/2 text-center md:text-left">
+                      <div class="group relative p-[1px] rounded-[2.5rem] bg-white/5 overflow-hidden transition-all duration-500 hover:scale-[1.03]">
+                          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[conic-gradient(from_0deg,#22c55e,transparent,#22c55e)] animate-[spin_4s_linear_infinite]"></div>
+                          <div class="relative bg-[#0a0a0a]/95 p-8 md:p-10 rounded-[2.45rem]">
+                              <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 italic group-hover:text-green-400 transition-colors">অফিসিয়াল পোর্টাল নির্বাচন</h3>
+                              <p class="text-gray-400 text-sm md:text-lg leading-relaxed font-light italic">আমরা আপনাকে সরাসরি সরকারি অফিসিয়াল গেটওয়েতে পৌঁছে দেব। ভুয়া ওয়েবসাইট থেকে সাবধান থাকুন।</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="fan-item relative flex flex-col md:flex-row-reverse items-center gap-10 opacity-0 translate-y-20">
+                  <div class="md:w-1/2 flex justify-center md:justify-start">
+                      <div class="num-box w-20 h-20 md:w-24 md:h-24 rounded-[2rem] bg-white/5 border border-white/10 flex items-center justify-center text-3xl font-black text-blue-500 shadow-2xl backdrop-blur-3xl">02</div>
+                  </div>
+                  <div class="md:w-1/2 text-center md:text-right">
+                      <div class="group relative p-[1px] rounded-[2.5rem] bg-white/5 overflow-hidden transition-all duration-500 hover:scale-[1.03]">
+                          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[conic-gradient(from_0deg,#3b82f6,transparent,#3b82f6)] animate-[spin_4s_linear_infinite]"></div>
+                          <div class="relative bg-[#0a0a0a]/95 p-8 md:p-10 rounded-[2.45rem]">
+                              <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 italic group-hover:text-blue-400">মেনু ও ফর্ম নেভিগেশন</h3>
+                              <p class="text-gray-400 text-sm md:text-lg leading-relaxed font-light italic">জটিল দাপ্তরিক শব্দের ভিড়ে সঠিক অপশনটি বেছে নিতে আমাদের ডেমো ম্যাপ আপনাকে সাহায্য করবে।</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="fan-item relative flex flex-col md:flex-row items-center gap-10 opacity-0 translate-y-20">
+                  <div class="md:w-1/2 flex justify-center md:justify-end">
+                      <div class="num-box w-20 h-20 md:w-24 md:h-24 rounded-[2rem] bg-white/5 border border-white/10 flex items-center justify-center text-3xl font-black text-purple-500 shadow-2xl backdrop-blur-3xl">03</div>
+                  </div>
+                  <div class="md:w-1/2 text-center md:text-left">
+                      <div class="group relative p-[1px] rounded-[2.5rem] bg-white/5 overflow-hidden transition-all duration-500 hover:scale-[1.03]">
+                          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[conic-gradient(from_0deg,#a855f7,transparent,#a855f7)] animate-[spin_4s_linear_infinite]"></div>
+                          <div class="relative bg-[#0a0a0a]/95 p-8 md:p-10 rounded-[2.45rem]">
+                              <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 italic group-hover:text-purple-400">নির্ভুল তথ্য ইনপুট</h3>
+                              <p class="text-gray-400 text-sm md:text-lg leading-relaxed font-light italic">নাম, ঠিকানা বা জন্ম তারিখ কীভাবে লিখলে রিজেক্ট হবে না, তার স্ক্রিনশটসহ ডেমো দেখুন।</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="fan-item relative flex flex-col md:flex-row-reverse items-center gap-10 opacity-0 translate-y-20">
+                  <div class="md:w-1/2 flex justify-center md:justify-start">
+                      <div class="num-box w-20 h-20 md:w-24 md:h-24 rounded-[2rem] bg-white/5 border border-white/10 flex items-center justify-center text-3xl font-black text-orange-500 shadow-2xl backdrop-blur-3xl">04</div>
+                  </div>
+                  <div class="md:w-1/2 text-center md:text-right">
+                      <div class="group relative p-[1px] rounded-[2.5rem] bg-white/5 overflow-hidden transition-all duration-500 hover:scale-[1.03]">
+                          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[conic-gradient(from_0deg,#f97316,transparent,#f97316)] animate-[spin_4s_linear_infinite]"></div>
+                          <div class="relative bg-[#0a0a0a]/95 p-8 md:p-10 rounded-[2.45rem]">
+                              <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 italic group-hover:text-orange-400">নিরাপদ ফি পেমেন্ট</h3>
+                              <p class="text-gray-400 text-sm md:text-lg leading-relaxed font-light italic">বিকাশ, রকেট বা নগদে সরকারি ফি জমা দেওয়ার নিরাপদ এবং নির্ভুল পদ্ধতি।</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="fan-item relative flex flex-col md:flex-row items-center gap-10 opacity-0 translate-y-20">
+                  <div class="md:w-1/2 flex justify-center md:justify-end">
+                      <div class="num-box w-20 h-20 md:w-24 md:h-24 rounded-[2rem] bg-white/5 border border-white/10 flex items-center justify-center text-3xl font-black text-green-500 shadow-2xl backdrop-blur-3xl">05</div>
+                  </div>
+                  <div class="md:w-1/2 text-center md:text-left">
+                      <div class="group relative p-[1px] rounded-[2.5rem] bg-white/5 overflow-hidden transition-all duration-500 hover:scale-[1.03]">
+                          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[conic-gradient(from_0deg,#10b981,transparent,#10b981)] animate-[spin_4s_linear_infinite]"></div>
+                          <div class="relative bg-[#0a0a0a]/95 p-8 md:p-10 rounded-[2.45rem]">
+                              <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 italic group-hover:text-emerald-400">বায়োমেট্রিক ও ডেলিভারি</h3>
+                              <p class="text-gray-400 text-sm md:text-lg leading-relaxed font-light italic">আপনার আবেদন শেষে ছবি তোলা এবং ডেলিভারি স্লিপ সংগ্রহের মাধ্যমে কাজ সম্পন্ন করুন।</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+  
+          </div>
+      </div>
+  </section>
+  
+ 
   
   
     
@@ -615,6 +733,43 @@
               duration: 1.5,
               stagger: 0.15,
               ease: "power4.out"
+          });
+      });
+
+      // step aimation
+
+      window.addEventListener('load', () => {
+          gsap.registerPlugin(ScrollTrigger);
+  
+          // Header Entrance
+          gsap.to(".reveal-fan", {
+              scrollTrigger: { trigger: "#story-steps", start: "top 85%" },
+              opacity: 1, y: 0, duration: 1.2, stagger: 0.2, ease: "expo.out"
+          });
+  
+          // Zig-Zag Staggered Animation
+          gsap.utils.toArray(".fan-item").forEach((item, i) => {
+              gsap.to(item, {
+                  scrollTrigger: {
+                      trigger: item,
+                      start: "top 90%",
+                      toggleActions: "play none none none"
+                  },
+                  opacity: 1,
+                  y: 0,
+                  duration: 1.5,
+                  ease: "power4.out",
+                  delay: i * 0.1
+              });
+              
+              // Floating animation for numbers
+              gsap.to(item.querySelector(".num-box"), {
+                  y: -15,
+                  repeat: -1,
+                  yoyo: true,
+                  duration: 2 + i,
+                  ease: "sine.inOut"
+              });
           });
       });
     </script>
