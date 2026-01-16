@@ -53,6 +53,30 @@
               min-width: 85vw; /* মোবাইলে কার্ডের উইডথ ৮৫% যাতে পরের কার্ডের একটু অংশ দেখা যায় */
           }
       }
+
+      /* neno service*/
+      @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+      }
+  
+      .neon-card {
+          transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+  
+      .neon-card:hover {
+          transform: translateY(-12px);
+      }
+  
+      /* Mobile Responsive Optimizations */
+      @media (max-width: 768px) {
+          .snake-border {
+              opacity: 0.6 !important; /* মোবাইলে বর্ডার লাইট সবসময় হালকা দেখা যাবে */
+          }
+          .neon-card {
+              min-height: 420px;
+          }
+      }
     </style>
 </head>
 <body>
@@ -451,62 +475,9 @@
       </div>
   </section>
   
-  <style>
-      @keyframes spin {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-      }
+
   
-      .neon-card {
-          transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      }
-  
-      .neon-card:hover {
-          transform: translateY(-12px);
-      }
-  
-      /* Mobile Responsive Optimizations */
-      @media (max-width: 768px) {
-          .snake-border {
-              opacity: 0.6 !important; /* মোবাইলে বর্ডার লাইট সবসময় হালকা দেখা যাবে */
-          }
-          .neon-card {
-              min-height: 420px;
-          }
-      }
-  </style>
-  
-  <script>
-      window.addEventListener('load', () => {
-          gsap.registerPlugin(ScrollTrigger);
-  
-          // Header entrance
-          gsap.to(".reveal-up", {
-              scrollTrigger: {
-                  trigger: "#neon-services",
-                  start: "top 85%",
-              },
-              y: 0,
-              opacity: 1,
-              duration: 1,
-              stagger: 0.2,
-              ease: "expo.out"
-          });
-  
-          // Cards entrance animation
-          gsap.to(".neon-card", {
-              scrollTrigger: {
-                  trigger: "#neon-services",
-                  start: "top 75%",
-              },
-              y: 0,
-              opacity: 1,
-              duration: 1.5,
-              stagger: 0.15,
-              ease: "power4.out"
-          });
-      });
-  </script>
+ 
   
   
     
@@ -613,6 +584,39 @@
           }
       });
   });
+
+
+  // neno services
+
+  window.addEventListener('load', () => {
+          gsap.registerPlugin(ScrollTrigger);
+  
+          // Header entrance
+          gsap.to(".reveal-up", {
+              scrollTrigger: {
+                  trigger: "#neon-services",
+                  start: "top 85%",
+              },
+              y: 0,
+              opacity: 1,
+              duration: 1,
+              stagger: 0.2,
+              ease: "expo.out"
+          });
+  
+          // Cards entrance animation
+          gsap.to(".neon-card", {
+              scrollTrigger: {
+                  trigger: "#neon-services",
+                  start: "top 75%",
+              },
+              y: 0,
+              opacity: 1,
+              duration: 1.5,
+              stagger: 0.15,
+              ease: "power4.out"
+          });
+      });
     </script>
 </body>
 </html>
